@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class AssetsServiceProvider
  *
- * @package Giwrgos88\Game\Core\Providers;
+ * @package Giwrgos88\Game\Front\Providers;
  */
 
 class AssetsServiceProvider extends ServiceProvider {
@@ -76,7 +76,7 @@ class AssetsServiceProvider extends ServiceProvider {
 	private function publishAssetsFiles() {
 
 		$this->publishes([
-			$this->path(2, '/resources/assets/') => public_path(''),
+			$this->path(2, '/resources/assets/') => public_path('/'),
 		], 'assets');
 	}
 
@@ -89,7 +89,7 @@ class AssetsServiceProvider extends ServiceProvider {
 		$this->loadViewsFrom(__DIR__ . '/path/to/views', 'front');
 
 		$this->publishes([
-			$location => resource_path('views/vendor/front'),
+			$location => base_path('resources/views/front'),
 		], 'views');
 	}
 }
